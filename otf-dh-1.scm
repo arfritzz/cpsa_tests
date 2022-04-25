@@ -1,44 +1,42 @@
 (herald dhca (algebra diffie-hellman))
 
 (defprotocol dhca diffie-hellman
-  (defrole init
-    (vars (g p x rndx) (a b ca name) (y expt) (n text))
+  (defrole ca (vars (subject a b ca name) (g rndx) (x expt))
     (trace
-     (recv enc ((cat (g p) (enc (g p) (privk b))) pubk a)))
-    (uniq-gen x)
-    (non-orig (privk a)))
+     (send (enc g a (pubk b))))
+    (uniq-gen g))
   (defrole resp
-    (vars (y rndx) (a b ca name) (x expt) (n text))
+    (vars (g y rndx) (a b ca name) (x expt) (n text))
     (trace
-     (recv (enc (cat (g p) (a) (pubk b))))
-     (send enc ((cat (g p) (enc (g p) (privk b))) pubk a)))
+     (recv (enc g a (pubk b)))
+     (send (enc g (enc g (privk b)) (pubk a))))
     (uniq-gen y)
     (non-orig (privk b)))
-  (defrole ca (vars (subject ca name) (x expt))
+  (defrole init
+    (vars (g x rndx) (a b ca name) (y expt) (n text))
     (trace
-     (send (enc (cat (g p) (a) (pubk b)))))
-    (uniq-gen g)
-    (uniq-gen p))
+     (recv (enc g (enc g (privk b)) (pubk a))))
+    (uniq-gen x)
+    (non-orig (privk a)))
   (comment An on the fly diffie-hellman exchange)
 )
 
 (defskeleton dhca
   (vars )
-  (defstrand init 5 )
+  (defstrand init 1 )
 (comment Full initiator POV No need to make extra assumptions))
 
 (defskeleton dhca
-  (vars (n text))
-  (defstrand resp 5 (n n))
-  (uniq-orig n)
+  (vars )
+  (defstrand resp 2 )
   (comment Full responder point of view with freshly chosen n)
 )
 
-(defskeleton dhca
-  (vars (a b ca name) (x y rndx) (n text))
-  (defstrand init 5 (x x) (y y) (ca ca) (a a) (b b) (n n))
-  (defstrand resp 5 (y y) (x x) (ca ca) (a a) (b b) (n n))
-(uniq-orig n)
-(comment point of view in which init and resp each complete and
-    they agree on the relevant parameters)
-)
+;;(defskeleton dhca
+;;  (vars (a b ca name) (x y g rndx) (n text))
+;;  (defstrand init 1 (x x) (y y) (g g) (a a) (b b) (n n))
+;;  (defstrand resp 2 (y y) (x x) (g g) (a a) (b b) (n n))
+;;(uniq-orig n)
+;;(comment point of view in which init and resp each complete and
+;;    they agree on the relevant parameters)
+;;)

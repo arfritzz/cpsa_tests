@@ -1,4 +1,5 @@
 (herald dhca (algebra diffie-hellman))
+;;(herald "dhca" (comment "flaw"))
 
 (defprotocol dhca diffie-hellman
   (defrole ca (vars (subject a b ca name) (g rndx) (x expt))
@@ -6,14 +7,14 @@
      (send (enc g a (pubk b))))
     (uniq-gen g))
   (defrole resp
-    (vars (g y rndx) (a b ca name) (x expt) (n text))
+    (vars (y g rndx) (a b ca name) (x expt))
     (trace
      (recv (enc g a (pubk b)))
      (send (enc g (enc g (privk b)) (pubk a))))
     (uniq-gen y)
     (non-orig (privk b)))
   (defrole init
-    (vars (g x rndx) (a b ca name) (y expt) (n text))
+    (vars (x g rndx) (a b ca name) (y expt))
     (trace
      (recv (enc g (enc g (privk b)) (pubk a))))
     (uniq-gen x)
@@ -32,11 +33,13 @@
   (comment Full responder point of view with freshly chosen n)
 )
 
-;;(defskeleton dhca
-;;  (vars (a b ca name) (x y g rndx) (n text))
-;;  (defstrand init 1 (x x) (y y) (g g) (a a) (b b) (n n))
-;;  (defstrand resp 2 (y y) (x x) (g g) (a a) (b b) (n n))
-;;(uniq-orig n)
-;;(comment point of view in which init and resp each complete and
-;;    they agree on the relevant parameters)
-;;)
+(defskeleton dhca
+  (vars (a b ca name) (x y g rndx))
+  (defstrand resp 2 (g g) (a a) (b b))
+  (defstrand init 1 (g g) (a a) (b b))
+;;  (uniq-gen x)
+;;  (uniq-gen y)
+;;  (uniq-gen g)
+(comment point of view in which init and resp each complete and
+    they agree on the relevant parameters)
+)

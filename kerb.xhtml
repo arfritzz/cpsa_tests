@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<!-- CPSA 3.6.7 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>kerb-flawed2</title>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <style>
+  svg.diagram { border-width: 1px; border-style: solid }
+ </style>
+</head>
+<body>
+
+<pre>(comment &quot;CPSA 3.6.7&quot;)
+(comment &quot;All input read from cpsa_tests/kerb.scm&quot;)</pre>
+
+<p id="t0">Tree 0.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.760pt' height='79.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.760 79.920' font-size='12.000'>
+  <text
+   x='139.800' y='26.040'
+   style='font-weight: bold; text-anchor: middle; fill: blue;'
+   onclick='window.open(&quot;#k2&quot;, &quot;_self&quot;)'>2</text>
+  <line
+   x1='89.880' y1='39.960' x2='139.800' y2='39.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='89.880' y='26.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k1&quot;, &quot;_self&quot;)'>1</text>
+  <line
+   x1='39.960' y1='39.960' x2='89.880' y2='39.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='39.960' y='26.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k0&quot;, &quot;_self&quot;)'>0</text>
+  </svg></div>
+
+<pre>(defprotocol kerb-flawed2 basic
+  (defrole init
+    (vars (a b s name) (ticket mesg) (m n text) (k skey))
+    (trace (send (cat a b n)) (recv (cat (enc k n (ltk a s)) ticket))
+      (send (cat (enc m k) ticket)))
+    (uniq-orig n))
+  (defrole resp
+    (vars (a b s name) (m text) (k skey))
+    (trace (recv (cat (enc m k) (enc k a b (ltk b s))))))
+  (defrole keyserv
+    (vars (a b s name) (n text) (k skey))
+    (trace (recv (cat a b n))
+      (send (cat (enc k n (ltk a s)) (enc k a b (ltk b s)))))
+    (uniq-orig k)))</pre>
+
+<p id="k0">Item <a href="#t0">0</a>, Child: <a href="#k1">1</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.880pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.880 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='139.920' y1='114.960' x2='139.920' y2='189.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <g><title>m</title><circle cx='139.920' cy='189.960' r='6.000'/></g>
+  <g><title>m</title>
+   <circle style='fill: red;' cx='139.920' cy='114.960' r='6.000'/></g>
+  <g><title>(cat (enc m k) ticket)</title>
+   <circle cx='39.960' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc k n (ltk a s)) ticket)</title>
+   <circle style='fill: red;' cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>(cat a b n)</title>
+   <circle cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <text
+   x='89.940' y='39.960'
+   style='text-anchor: middle;'>kerb-flawed2 0</text></svg></div>
+
+<pre>(defskeleton kerb-flawed2
+  (vars (ticket mesg) (m n text) (a b s name) (k skey))
+  (defstrand init 3 (ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))
+  (deflistener m)
+  (non-orig (ltk a s) (ltk b s))
+  (uniq-orig m n)
+  (label 0)
+  (unrealized (0 1) (1 0))
+  (preskeleton)
+  (origs (n (0 0)) (m (0 2)))
+  (comment &quot;Not a skeleton&quot;))</pre>
+
+<p id="k1">Item <a href="#t0">1</a>, Parent: <a href="#k0">0</a>, Child: <a href="#k2">2</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.880pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.880 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <g><title>m</title><circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>m</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 39.960 264.960 Q 86.940 264.960 133.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc m k) ticket)</title>
+   <circle cx='39.960' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc k n (ltk a s)) ticket)</title>
+   <circle style='fill: red;' cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>(cat a b n)</title>
+   <circle cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <text
+   x='89.940' y='39.960'
+   style='text-anchor: middle;'>kerb-flawed2 1</text></svg></div>
+
+<pre>(defskeleton kerb-flawed2
+  (vars (ticket mesg) (m n text) (a b s name) (k skey))
+  (defstrand init 3 (ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))
+  (deflistener m)
+  (precedes ((0 2) (1 0)))
+  (non-orig (ltk a s) (ltk b s))
+  (uniq-orig m n)
+  (label 1)
+  (parent 0)
+  (unrealized (0 1))
+  (origs (n (0 0)) (m (0 2)))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k2">Item <a href="#t0">2</a>, Parent: <a href="#k1">1</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='279.840pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 279.840 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='239.880' y1='114.960' x2='239.880' y2='189.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 239.880 189.960 Q 142.920 152.460 45.960 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc k n (ltk a s)) (enc k a b-0 (ltk b-0 s)))</title>
+   <circle cx='239.880' cy='189.960' r='6.000'/></g>
+  <g><title>(cat a b-0 n)</title>
+   <circle style='fill: blue;' cx='239.880' cy='114.960' r='6.000'/></g>
+  <g><title>m</title><circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>m</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 39.960 264.960 Q 86.940 264.960 133.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc m k) ticket)</title>
+   <circle cx='39.960' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc k n (ltk a s)) ticket)</title>
+   <circle style='fill: blue;' cx='39.960' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 39.960 114.960 Q 136.920 77.460 233.880 114.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b n)</title>
+   <circle cx='39.960' cy='114.960' r='6.000'/></g>
+  <g><title>((n n) (a a) (b b-0) (s s) (k k))</title>
+   <text
+    x='239.880' y='77.460' style='text-anchor: middle;'>keyserv</text>
+   </g>
+  <g>
+   <title>((ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <text
+   x='139.920' y='39.960'
+   style='text-anchor: middle;'>kerb-flawed2 2 (realized)</text></svg>
+ </div>
+
+<pre>(defskeleton kerb-flawed2
+  (vars (ticket mesg) (m n text) (a b s b-0 name) (k skey))
+  (defstrand init 3 (ticket ticket) (m m) (n n) (a a) (b b) (s s) (k k))
+  (deflistener m)
+  (defstrand keyserv 2 (n n) (a a) (b b-0) (s s) (k k))
+  (precedes ((0 0) (2 0)) ((0 2) (1 0)) ((2 1) (0 1)))
+  (non-orig (ltk a s) (ltk b s))
+  (uniq-orig m n k)
+  (operation encryption-test (added-strand keyserv 2)
+    (enc k n (ltk a s)) (0 1))
+  (label 2)
+  (parent 1)
+  (unrealized)
+  (shape)
+  (maps ((0 1) ((a a) (b b) (s s) (m m) (ticket ticket) (n n) (k k))))
+  (origs (k (2 1)) (n (0 0)) (m (0 2))))</pre>
+
+</body>
+</html>

@@ -1,0 +1,1769 @@
+<?xml version="1.0"?>
+<!-- CPSA 3.6.7 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>xiang_zheng</title>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <style>
+  svg.diagram { border-width: 1px; border-style: solid }
+ </style>
+</head>
+<body>
+
+<pre>(comment &quot;CPSA 3.6.7&quot;)
+(comment &quot;All input read from cpsa_tests/xiang_zheng.scm&quot;)</pre>
+
+<p id="top">Trees: <a href="#t0">0</a> <a href="#t1">1</a>.</p>
+
+<p id="t0">Tree <a href="#top">0</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='79.920pt' height='79.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 79.920 79.920' font-size='12.000'>
+  <text
+   x='39.960' y='26.040'
+   style='font-weight: bold; text-anchor: middle; fill: blue;'
+   onclick='window.open(&quot;#k0&quot;, &quot;_self&quot;)'>0</text>
+  </svg></div>
+
+<pre>(defprotocol xiang_zheng basic
+  (defrole init
+    (vars (a b name) (rg rc ra t1 t2 text))
+    (trace (send a)
+      (recv (cat (enc b t1 rg (hash a rc)) (hash b t1 rg)))
+      (send (cat (enc a t2 ra (hash a b rc)) (hash a t2 ra)))))
+  (defrole resp
+    (vars (a b name) (rg rc ra t1 t2 text))
+    (trace (recv a)
+      (send (cat (enc b t1 rg (hash a rc)) (hash b t1 rg)))
+      (recv (cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))))))</pre>
+
+<p id="k0">Item <a href="#t0">0</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='79.920pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 79.920 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle cx='39.960' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle style='fill: blue;' cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <text
+   x='39.960' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 0 (realized)</text></svg>
+ </div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (ra t2 rg rc t1 text) (a b name))
+  (defstrand init 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (uniq-gen ra t2)
+  (label 0)
+  (unrealized)
+  (shape)
+  (maps ((0) ((a a) (b b) (ra ra) (t2 t2) (rg rg) (rc rc) (t1 t1))))
+  (origs))</pre>
+
+<p id="t1">Tree <a href="#top">1</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='429.360pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 429.360 379.920' font-size='12.000'>
+  <text
+   x='389.400' y='326.040'
+   style='font-style: italic; text-anchor: middle; fill: green;'
+   onclick='window.open(&quot;#k17&quot;, &quot;_self&quot;)'>17</text>
+  <line
+   x1='339.480' y1='339.960' x2='389.400' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='339.480' y='326.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k19&quot;, &quot;_self&quot;)'>19</text>
+  <line
+   x1='289.560' y1='339.960' x2='339.480' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='289.560' y='326.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k17&quot;, &quot;_self&quot;)'>17</text>
+  <line
+   x1='239.640' y1='339.960' x2='289.560' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='239.640' y='326.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k13&quot;, &quot;_self&quot;)'>13</text>
+  <line
+   x1='189.720' y1='339.960' x2='239.640' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='189.720' y='326.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k9&quot;, &quot;_self&quot;)'>9</text>
+  <line
+   x1='139.800' y1='302.460' x2='189.720' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='389.400' y='251.040'
+   style='font-style: italic; text-anchor: middle; fill: green;'
+   onclick='window.open(&quot;#k16&quot;, &quot;_self&quot;)'>16</text>
+  <line
+   x1='339.480' y1='264.960' x2='389.400' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='339.480' y='251.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k18&quot;, &quot;_self&quot;)'>18</text>
+  <line
+   x1='289.560' y1='264.960' x2='339.480' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='289.560' y='251.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k16&quot;, &quot;_self&quot;)'>16</text>
+  <line
+   x1='239.640' y1='264.960' x2='289.560' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='239.640' y='251.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k12&quot;, &quot;_self&quot;)'>12</text>
+  <line
+   x1='189.720' y1='264.960' x2='239.640' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='189.720' y='251.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k8&quot;, &quot;_self&quot;)'>8</text>
+  <line
+   x1='139.800' y1='302.460' x2='189.720' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='139.800' y='288.540' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k6&quot;, &quot;_self&quot;)'>6</text>
+  <line
+   x1='89.880' y1='302.460' x2='139.800' y2='302.460'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='89.880' y='288.540' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k3&quot;, &quot;_self&quot;)'>3</text>
+  <line
+   x1='39.960' y1='189.960' x2='89.880' y2='302.460'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='339.480' y='176.040'
+   style='font-style: italic; text-anchor: middle; fill: green;'
+   onclick='window.open(&quot;#k11&quot;, &quot;_self&quot;)'>11</text>
+  <line
+   x1='289.560' y1='189.960' x2='339.480' y2='189.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='289.560' y='176.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k15&quot;, &quot;_self&quot;)'>15</text>
+  <line
+   x1='239.640' y1='189.960' x2='289.560' y2='189.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='239.640' y='176.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k11&quot;, &quot;_self&quot;)'>11</text>
+  <line
+   x1='189.720' y1='152.460' x2='239.640' y2='189.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='339.480' y='101.040'
+   style='font-style: italic; text-anchor: middle; fill: green;'
+   onclick='window.open(&quot;#k10&quot;, &quot;_self&quot;)'>10</text>
+  <line
+   x1='289.560' y1='114.960' x2='339.480' y2='114.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='289.560' y='101.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k14&quot;, &quot;_self&quot;)'>14</text>
+  <line
+   x1='239.640' y1='114.960' x2='289.560' y2='114.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='239.640' y='101.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k10&quot;, &quot;_self&quot;)'>10</text>
+  <line
+   x1='189.720' y1='152.460' x2='239.640' y2='114.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='189.720' y='138.540' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k7&quot;, &quot;_self&quot;)'>7</text>
+  <line
+   x1='139.800' y1='152.460' x2='189.720' y2='152.460'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='139.800' y='138.540' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k5&quot;, &quot;_self&quot;)'>5</text>
+  <line
+   x1='89.880' y1='114.960' x2='139.800' y2='152.460'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='139.800' y='26.040'
+   style='font-weight: bold; text-anchor: middle; fill: blue;'
+   onclick='window.open(&quot;#k4&quot;, &quot;_self&quot;)'>4</text>
+  <line
+   x1='89.880' y1='114.960' x2='139.800' y2='39.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='89.880' y='101.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k2&quot;, &quot;_self&quot;)'>2</text>
+  <line
+   x1='39.960' y1='189.960' x2='89.880' y2='114.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <text
+   x='39.960' y='176.040' style='text-anchor: middle; fill: black;'
+   onclick='window.open(&quot;#k1&quot;, &quot;_self&quot;)'>1</text>
+  </svg></div>
+
+<pre>(defprotocol xiang_zheng basic
+  (defrole init
+    (vars (a b name) (rg rc ra t1 t2 text))
+    (trace (send a)
+      (recv (cat (enc b t1 rg (hash a rc)) (hash b t1 rg)))
+      (send (cat (enc a t2 ra (hash a b rc)) (hash a t2 ra)))))
+  (defrole resp
+    (vars (a b name) (rg rc ra t1 t2 text))
+    (trace (recv a)
+      (send (cat (enc b t1 rg (hash a rc)) (hash b t1 rg)))
+      (recv (cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))))))</pre>
+
+<p id="k1">Item <a href="#t1">1</a>, Children: <a href="#k2">2</a> <a href="#k3">3</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='79.920pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 79.920 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: red;' cx='39.960' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='39.960' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 1</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (uniq-gen rg rc t1)
+  (label 1)
+  (unrealized (0 2))
+  (origs)
+  (comment &quot;2 in cohort - 2 not yet seen&quot;))</pre>
+
+<p id="k2">Item <a href="#t1">2</a>, Parent: <a href="#k1">1</a>, Children: <a href="#k4">4</a> <a href="#k5">5</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.880pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.880 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='139.920' y1='114.960' x2='139.920' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 139.920 264.960 Q 92.940 264.960 45.960 264.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a rc)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: red;' cx='139.920' cy='189.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='114.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 86.940 189.960 133.920 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='89.940' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 2</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (precedes ((0 1) (1 1)) ((1 2) (0 2)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (added-strand init 3)
+    (enc a t2 ra (hash a b rc)) (0 2))
+  (label 2)
+  (parent 1)
+  (unrealized (1 1))
+  (comment &quot;2 in cohort - 2 not yet seen&quot;))</pre>
+
+<p id="k3">Item <a href="#t1">3</a>, Parent: <a href="#k1">1</a>, Child: <a href="#k6">6</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.880pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.880 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='139.920' y1='189.960' x2='139.920' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 139.920 264.960 Q 92.940 264.960 45.960 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rc)</title>
+   <circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a b rc)</title>
+   <circle style='fill: red;' cx='139.920' cy='189.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 86.940 189.960 133.920 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='89.940' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 3</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rc))
+  (precedes ((0 1) (1 0)) ((1 1) (0 2)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (added-listener (hash a b rc))
+    (enc a t2 ra (hash a b rc)) (0 2))
+  (label 3)
+  (parent 1)
+  (unrealized (1 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k4">Item <a href="#t1">4</a>, Parent: <a href="#k2">2</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='179.880pt' height='304.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 179.880 304.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='139.920' y1='114.960' x2='139.920' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 139.920 264.960 Q 92.940 264.960 45.960 264.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle style='fill: blue;' cx='139.920' cy='189.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='114.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 86.940 189.960 133.920 189.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='89.940' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 4 (realized)</text></svg>
+ </div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (precedes ((0 1) (1 1)) ((1 2) (0 2)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (displaced 2 0 resp 2)
+    (enc b t1-0 rg-0 (hash a rc)) (1 1))
+  (label 4)
+  (parent 2)
+  (unrealized)
+  (shape)
+  (maps ((0) ((a a) (b b) (rg rg) (rc rc) (t1 t1) (ra ra) (t2 t2))))
+  (origs))</pre>
+
+<p id="k5">Item <a href="#t1">5</a>, Parent: <a href="#k2">2</a>, Child: <a href="#k7">7</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='279.840pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 279.840 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='239.880' y1='189.960' x2='239.880' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='189.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 239.880 264.960 Q 192.900 264.960 145.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rc)</title>
+   <circle cx='239.880' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a rc)</title>
+   <circle style='fill: red;' cx='239.880' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 139.920 339.960 Q 92.940 339.960 45.960 339.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a rc)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='189.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 136.920 152.460 233.880 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='139.920' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 5</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a rc))
+  (precedes ((0 1) (2 0)) ((1 2) (0 2)) ((2 1) (1 1)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (added-listener (hash a rc))
+    (enc b t1-0 rg-0 (hash a rc)) (1 1))
+  (label 5)
+  (parent 2)
+  (unrealized (2 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k6">Item <a href="#t1">6</a>, Parent: <a href="#k3">3</a>, Children: <a href="#k8">8</a> <a href="#k9">9</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='279.840pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 279.840 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='239.880' y1='189.960' x2='239.880' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 239.880 264.960 Q 192.900 264.960 145.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b rc)</title>
+   <circle cx='239.880' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a b rc)</title>
+   <circle style='fill: red;' cx='239.880' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 139.920 339.960 Q 92.940 339.960 45.960 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rc)</title>
+   <circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a b rc)</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 136.920 152.460 233.880 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='139.920' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 6</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rc))
+  (deflistener (cat a b rc))
+  (precedes ((0 1) (2 0)) ((1 1) (0 2)) ((2 1) (1 0)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (added-listener (cat a b rc)) (hash a b rc)
+    (1 0))
+  (label 6)
+  (parent 3)
+  (unrealized (2 0))
+  (comment &quot;2 in cohort - 2 not yet seen&quot;))</pre>
+
+<p id="k7">Item <a href="#t1">7</a>, Parent: <a href="#k5">5</a>, Children: <a href="#k10">10</a> <a href="#k11">11</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='379.800pt' height='454.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 379.800 454.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='339.840' y1='189.960' x2='339.840' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='264.960' x2='239.880' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 339.840 264.960 Q 292.860 264.960 245.880 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a rc)</title>
+   <circle cx='339.840' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a rc)</title>
+   <circle style='fill: red;' cx='339.840' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 239.880 339.960 Q 192.900 339.960 145.920 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rc)</title>
+   <circle cx='239.880' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a rc)</title>
+   <circle style='fill: blue;' cx='239.880' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 139.920 414.960 Q 92.940 414.960 45.960 414.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='414.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a rc)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rc)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 186.900 152.460 333.840 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rc)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='189.900' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 7</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg rc t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rc) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc rc) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a rc))
+  (deflistener (cat a rc))
+  (precedes ((0 1) (3 0)) ((1 2) (0 2)) ((2 1) (1 1)) ((3 1) (2 0)))
+  (uniq-gen rg rc t1)
+  (operation encryption-test (added-listener (cat a rc)) (hash a rc)
+    (2 0))
+  (label 7)
+  (parent 5)
+  (unrealized (3 0))
+  (comment &quot;2 in cohort - 2 not yet seen&quot;))</pre>
+
+<p id="k8">Item <a href="#t1">8</a>, Parent: <a href="#k6">6</a>, Child: <a href="#k12">12</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='279.840pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 279.840 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='239.880' y1='189.960' x2='239.880' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 239.880 264.960 Q 192.900 264.960 145.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b t1)</title>
+   <circle cx='239.880' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a b t1)</title>
+   <circle style='fill: red;' cx='239.880' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 139.920 339.960 Q 92.940 339.960 45.960 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b t1)</title>
+   <circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a b t1)</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 136.920 152.460 233.880 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='139.920' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 8</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b t1))
+  (deflistener (cat a b t1))
+  (precedes ((0 1) (2 0)) ((1 1) (0 2)) ((2 1) (1 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (displaced 3 0 resp 2) rc (2 0))
+  (label 8)
+  (parent 6)
+  (unrealized (2 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k9">Item <a href="#t1">9</a>, Parent: <a href="#k6">6</a>, Child: <a href="#k13">13</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='279.840pt' height='379.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 279.840 379.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='239.880' y1='189.960' x2='239.880' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 239.880 264.960 Q 192.900 264.960 145.920 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b rg)</title>
+   <circle cx='239.880' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a b rg)</title>
+   <circle style='fill: red;' cx='239.880' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 139.920 339.960 Q 92.940 339.960 45.960 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rg)</title>
+   <circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a b rg)</title>
+   <circle style='fill: blue;' cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 136.920 152.460 233.880 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='139.920' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 9</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rg))
+  (deflistener (cat a b rg))
+  (precedes ((0 1) (2 0)) ((1 1) (0 2)) ((2 1) (1 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (displaced 3 0 resp 2) rc (2 0))
+  (label 9)
+  (parent 6)
+  (unrealized (2 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k10">Item <a href="#t1">10</a>, Parent: <a href="#k7">7</a>, Child: <a href="#k14">14</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='379.800pt' height='454.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 379.800 454.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='339.840' y1='189.960' x2='339.840' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='264.960' x2='239.880' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 339.840 264.960 Q 292.860 264.960 245.880 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a t1)</title>
+   <circle cx='339.840' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a t1)</title>
+   <circle style='fill: red;' cx='339.840' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 239.880 339.960 Q 192.900 339.960 145.920 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='239.880' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: blue;' cx='239.880' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 139.920 414.960 Q 92.940 414.960 45.960 414.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='414.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a t1)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 186.900 152.460 333.840 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc t1) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='189.900' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 10</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc t1) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a t1))
+  (deflistener (cat a t1))
+  (precedes ((0 1) (3 0)) ((1 2) (0 2)) ((2 1) (1 1)) ((3 1) (2 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (displaced 4 0 resp 2) rc (3 0))
+  (label 10)
+  (parent 7)
+  (unrealized (3 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k11">Item <a href="#t1">11</a>, Parent: <a href="#k7">7</a>, Child: <a href="#k15">15</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='379.800pt' height='454.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 379.800 454.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='339.840' y1='189.960' x2='339.840' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='264.960' x2='239.880' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='264.960' x2='139.920' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 339.840 264.960 Q 292.860 264.960 245.880 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a rg)</title>
+   <circle cx='339.840' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a rg)</title>
+   <circle style='fill: red;' cx='339.840' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 239.880 339.960 Q 192.900 339.960 145.920 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='239.880' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: blue;' cx='239.880' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 139.920 414.960 Q 92.940 414.960 45.960 414.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='414.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a rg)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='264.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 186.900 152.460 333.840 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc rg) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='189.900' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 11</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc rg) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a rg))
+  (deflistener (cat a rg))
+  (precedes ((0 1) (3 0)) ((1 2) (0 2)) ((2 1) (1 1)) ((3 1) (2 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (displaced 4 0 resp 2) rc (3 0))
+  (label 11)
+  (parent 7)
+  (unrealized (3 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k12">Item <a href="#t1">12</a>, Parent: <a href="#k8">8</a>, Child: <a href="#k16">16</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='379.800pt' height='454.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 379.800 454.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='339.840' y1='189.960' x2='339.840' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='264.960' x2='239.880' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='339.960' x2='139.920' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 339.840 264.960 Q 292.860 264.960 245.880 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='339.840' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: red;' cx='339.840' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 239.880 339.960 Q 192.900 339.960 145.920 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b t1)</title>
+   <circle cx='239.880' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a b t1)</title>
+   <circle style='fill: blue;' cx='239.880' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 139.920 414.960 Q 92.940 414.960 45.960 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b t1)</title>
+   <circle cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a b t1)</title>
+   <circle style='fill: blue;' cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 186.900 152.460 333.840 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='189.900' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 12</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b t1))
+  (deflistener (cat a b t1))
+  (deflistener (hash a t1))
+  (precedes ((0 1) (3 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a t1)) t1 (2 0)
+    (enc b t1 rg (hash a t1)))
+  (label 12)
+  (parent 8)
+  (unrealized (3 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k13">Item <a href="#t1">13</a>, Parent: <a href="#k9">9</a>, Child: <a href="#k17">17</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='379.800pt' height='454.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 379.800 454.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='339.840' y1='189.960' x2='339.840' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='264.960' x2='239.880' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='339.960' x2='139.920' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 339.840 264.960 Q 292.860 264.960 245.880 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='339.840' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: red;' cx='339.840' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 239.880 339.960 Q 192.900 339.960 145.920 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b rg)</title>
+   <circle cx='239.880' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a b rg)</title>
+   <circle style='fill: blue;' cx='239.880' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 139.920 414.960 Q 92.940 414.960 45.960 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rg)</title>
+   <circle cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a b rg)</title>
+   <circle style='fill: blue;' cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 186.900 152.460 333.840 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='189.900' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 13</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rg))
+  (deflistener (cat a b rg))
+  (deflistener (hash a rg))
+  (precedes ((0 1) (3 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a rg)) rg (2 0)
+    (enc b t1 rg (hash a rg)))
+  (label 13)
+  (parent 9)
+  (unrealized (3 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k14">Item <a href="#t1">14</a>, Parent: <a href="#k10">10</a>, Seen Child: <a href="#k10">10</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='479.760pt' height='529.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 479.760 529.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='439.800' y1='189.960' x2='439.800' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='264.960' x2='339.840' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='339.960' x2='239.880' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='339.960' x2='139.920' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 439.800 264.960 Q 392.820 264.960 345.840 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='439.800' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: red;' cx='439.800' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 339.840 339.960 Q 292.860 339.960 245.880 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a t1)</title>
+   <circle cx='339.840' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a t1)</title>
+   <circle style='fill: blue;' cx='339.840' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 239.880 414.960 Q 192.900 414.960 145.920 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='239.880' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: blue;' cx='239.880' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 139.920 489.960 Q 92.940 489.960 45.960 489.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='489.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a t1)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='489.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 236.880 152.460 433.800 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc t1) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='239.880' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 14</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc t1) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a t1))
+  (deflistener (cat a t1))
+  (deflistener (hash a t1))
+  (precedes ((0 1) (4 0)) ((1 2) (0 2)) ((2 1) (1 1)) ((3 1) (2 0))
+    ((4 1) (3 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a t1)) t1 (3 0)
+    (enc b t1 rg (hash a t1)))
+  (label 14)
+  (parent 10)
+  (seen 10)
+  (unrealized (4 0))
+  (comment &quot;1 in cohort - 0 not yet seen&quot;))</pre>
+
+<p id="k15">Item <a href="#t1">15</a>, Parent: <a href="#k11">11</a>, Seen Child: <a href="#k11">11</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='479.760pt' height='529.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 479.760 529.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='439.800' y1='189.960' x2='439.800' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='264.960' x2='339.840' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='339.960' x2='239.880' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='339.960' x2='139.920' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 439.800 264.960 Q 392.820 264.960 345.840 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='439.800' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: red;' cx='439.800' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 339.840 339.960 Q 292.860 339.960 245.880 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a rg)</title>
+   <circle cx='339.840' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a rg)</title>
+   <circle style='fill: blue;' cx='339.840' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 239.880 414.960 Q 192.900 414.960 145.920 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='239.880' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: blue;' cx='239.880' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 139.920 489.960 Q 92.940 489.960 45.960 489.960'
+   style='stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle cx='139.920' cy='489.960' r='6.000'/></g>
+  <g>
+   <title>(cat (enc b t1-0 rg-0 (hash a rg)) (hash b t1-0 rg-0))</title>
+   <circle style='fill: blue;' cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>a</title><circle cx='139.920' cy='339.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='489.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 236.880 152.460 433.800 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg-0) (rc rg) (ra ra) (t1 t1-0) (t2 t2) (a a) (b b))</title>
+   <text x='139.920' y='77.460' style='text-anchor: middle;'>init</text>
+   </g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='239.880' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 15</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 rg-0 t1-0 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (defstrand init 3 (rg rg-0) (rc rg) (ra ra) (t1 t1-0) (t2 t2) (a a)
+    (b b))
+  (deflistener (hash a rg))
+  (deflistener (cat a rg))
+  (deflistener (hash a rg))
+  (precedes ((0 1) (4 0)) ((1 2) (0 2)) ((2 1) (1 1)) ((3 1) (2 0))
+    ((4 1) (3 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a rg)) rg (3 0)
+    (enc b t1 rg (hash a rg)))
+  (label 15)
+  (parent 11)
+  (seen 11)
+  (unrealized (4 0))
+  (comment &quot;1 in cohort - 0 not yet seen&quot;))</pre>
+
+<p id="k16">Item <a href="#t1">16</a>, Parent: <a href="#k12">12</a>, Child: <a href="#k18">18</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='479.760pt' height='529.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 479.760 529.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='439.800' y1='189.960' x2='439.800' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='264.960' x2='339.840' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='339.960' x2='239.880' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='414.960' x2='139.920' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 439.800 264.960 Q 392.820 264.960 345.840 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a t1)</title>
+   <circle cx='439.800' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a t1)</title>
+   <circle style='fill: red;' cx='439.800' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 339.840 339.960 Q 292.860 339.960 245.880 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='339.840' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: blue;' cx='339.840' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 239.880 414.960 Q 192.900 414.960 145.920 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b t1)</title>
+   <circle cx='239.880' cy='414.960' r='6.000'/></g>
+  <g><title>(cat a b t1)</title>
+   <circle style='fill: blue;' cx='239.880' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 139.920 489.960 Q 92.940 489.960 45.960 489.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b t1)</title>
+   <circle cx='139.920' cy='489.960' r='6.000'/></g>
+  <g><title>(hash a b t1)</title>
+   <circle style='fill: blue;' cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='489.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 236.880 152.460 433.800 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='239.880' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 16</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b t1))
+  (deflistener (cat a b t1))
+  (deflistener (hash a t1))
+  (deflistener (cat a t1))
+  (precedes ((0 1) (4 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0))
+    ((4 1) (3 0)))
+  (uniq-gen rg t1)
+  (operation encryption-test (added-listener (cat a t1)) (hash a t1)
+    (3 0))
+  (label 16)
+  (parent 12)
+  (unrealized (4 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k17">Item <a href="#t1">17</a>, Parent: <a href="#k13">13</a>, Child: <a href="#k19">19</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='479.760pt' height='529.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 479.760 529.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='439.800' y1='189.960' x2='439.800' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='264.960' x2='339.840' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='339.960' x2='239.880' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='414.960' x2='139.920' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 439.800 264.960 Q 392.820 264.960 345.840 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a rg)</title>
+   <circle cx='439.800' cy='264.960' r='6.000'/></g>
+  <g><title>(cat a rg)</title>
+   <circle style='fill: red;' cx='439.800' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 339.840 339.960 Q 292.860 339.960 245.880 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='339.840' cy='339.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: blue;' cx='339.840' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 239.880 414.960 Q 192.900 414.960 145.920 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b rg)</title>
+   <circle cx='239.880' cy='414.960' r='6.000'/></g>
+  <g><title>(cat a b rg)</title>
+   <circle style='fill: blue;' cx='239.880' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 139.920 489.960 Q 92.940 489.960 45.960 489.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rg)</title>
+   <circle cx='139.920' cy='489.960' r='6.000'/></g>
+  <g><title>(hash a b rg)</title>
+   <circle style='fill: blue;' cx='139.920' cy='414.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='489.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 236.880 152.460 433.800 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='239.880' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 17</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rg))
+  (deflistener (cat a b rg))
+  (deflistener (hash a rg))
+  (deflistener (cat a rg))
+  (precedes ((0 1) (4 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0))
+    ((4 1) (3 0)))
+  (uniq-gen rg t1)
+  (operation encryption-test (added-listener (cat a rg)) (hash a rg)
+    (3 0))
+  (label 17)
+  (parent 13)
+  (unrealized (4 0))
+  (comment &quot;1 in cohort - 1 not yet seen&quot;))</pre>
+
+<p id="k18">Item <a href="#t1">18</a>, Parent: <a href="#k16">16</a>, Seen Child: <a href="#k16">16</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='579.720pt' height='604.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 579.720 604.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='539.760' y1='189.960' x2='539.760' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='439.800' y1='264.960' x2='439.800' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='339.960' x2='339.840' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='414.960' x2='239.880' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='489.960' x2='139.920' y2='564.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='564.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 539.760 264.960 Q 492.780 264.960 445.800 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='539.760' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: red;' cx='539.760' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 439.800 339.960 Q 392.820 339.960 345.840 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a t1)</title>
+   <circle cx='439.800' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a t1)</title>
+   <circle style='fill: blue;' cx='439.800' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 339.840 414.960 Q 292.860 414.960 245.880 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a t1)</title>
+   <circle cx='339.840' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a t1)</title>
+   <circle style='fill: blue;' cx='339.840' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 239.880 489.960 Q 192.900 489.960 145.920 489.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b t1)</title>
+   <circle cx='239.880' cy='489.960' r='6.000'/></g>
+  <g><title>(cat a b t1)</title>
+   <circle style='fill: blue;' cx='239.880' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 139.920 564.960 Q 92.940 564.960 45.960 564.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b t1)</title>
+   <circle cx='139.920' cy='564.960' r='6.000'/></g>
+  <g><title>(hash a b t1)</title>
+   <circle style='fill: blue;' cx='139.920' cy='489.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b t1)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='564.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 286.860 152.460 533.760 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a t1)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='289.860' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 18</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc t1) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b t1))
+  (deflistener (cat a b t1))
+  (deflistener (hash a t1))
+  (deflistener (cat a t1))
+  (deflistener (hash a t1))
+  (precedes ((0 1) (5 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0))
+    ((4 1) (3 0)) ((5 1) (4 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a t1)) t1 (4 0)
+    (enc b t1 rg (hash a t1)))
+  (label 18)
+  (parent 16)
+  (seen 16)
+  (unrealized (5 0))
+  (comment &quot;1 in cohort - 0 not yet seen&quot;))</pre>
+
+<p id="k19">Item <a href="#t1">19</a>, Parent: <a href="#k17">17</a>, Seen Child: <a href="#k17">17</a>.</p>
+
+<div>
+ <svg
+  class='diagram' width='579.720pt' height='604.920pt'
+  xmlns='http://www.w3.org/2000/svg' version='1.1'
+  viewBox='0 0 579.720 604.920' font-size='12.000'>
+  <defs>
+   <marker
+    id='arrow' orient='auto' markerWidth='5' markerHeight='10' refX='5'
+    refY='5'>
+    <path
+     d='M 0 0 5 5 0 10'
+     style='stroke-width: 2; fill: none; stroke: black;'/></marker>
+   </defs>
+  <line
+   x1='539.760' y1='189.960' x2='539.760' y2='264.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='439.800' y1='264.960' x2='439.800' y2='339.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='339.840' y1='339.960' x2='339.840' y2='414.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='239.880' y1='414.960' x2='239.880' y2='489.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='139.920' y1='489.960' x2='139.920' y2='564.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <line
+   x1='39.960' y1='114.960' x2='39.960' y2='564.960'
+   style='stroke-width: 0.960; stroke: gray;'/>
+  <path
+   d='M 539.760 264.960 Q 492.780 264.960 445.800 264.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='539.760' cy='264.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: red;' cx='539.760' cy='189.960' r='6.000'/></g>
+  <path
+   d='M 439.800 339.960 Q 392.820 339.960 345.840 339.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a rg)</title>
+   <circle cx='439.800' cy='339.960' r='6.000'/></g>
+  <g><title>(cat a rg)</title>
+   <circle style='fill: blue;' cx='439.800' cy='264.960' r='6.000'/></g>
+  <path
+   d='M 339.840 414.960 Q 292.860 414.960 245.880 414.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a rg)</title>
+   <circle cx='339.840' cy='414.960' r='6.000'/></g>
+  <g><title>(hash a rg)</title>
+   <circle style='fill: blue;' cx='339.840' cy='339.960' r='6.000'/></g>
+  <path
+   d='M 239.880 489.960 Q 192.900 489.960 145.920 489.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat a b rg)</title>
+   <circle cx='239.880' cy='489.960' r='6.000'/></g>
+  <g><title>(cat a b rg)</title>
+   <circle style='fill: blue;' cx='239.880' cy='414.960' r='6.000'/></g>
+  <path
+   d='M 139.920 564.960 Q 92.940 564.960 45.960 564.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(hash a b rg)</title>
+   <circle cx='139.920' cy='564.960' r='6.000'/></g>
+  <g><title>(hash a b rg)</title>
+   <circle style='fill: blue;' cx='139.920' cy='489.960' r='6.000'/></g>
+  <g><title>(cat (enc a t2 ra (hash a b rg)) (hash a t2 ra))</title>
+   <circle style='fill: blue;' cx='39.960' cy='564.960' r='6.000'/></g>
+  <path
+   d='M 39.960 189.960 Q 286.860 152.460 533.760 189.960'
+   style='stroke-dasharray: 6.000,2.400; stroke-width: 0.960; stroke: black; marker-end: url(#arrow); fill: none;'/>
+  <g><title>(cat (enc b t1 rg (hash a rg)) (hash b t1 rg))</title>
+   <circle cx='39.960' cy='189.960' r='6.000'/></g>
+  <g><title>a</title>
+   <circle style='fill: blue;' cx='39.960' cy='114.960' r='6.000'/></g>
+  <g>
+   <title>((rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))</title>
+   <text x='39.960' y='77.460' style='text-anchor: middle;'>resp</text>
+   </g>
+  <text
+   x='289.860' y='39.960'
+   style='text-anchor: middle;'>xiang_zheng 19</text></svg></div>
+
+<pre>(defskeleton xiang_zheng
+  (vars (rg t1 ra t2 text) (a b name))
+  (defstrand resp 3 (rg rg) (rc rg) (ra ra) (t1 t1) (t2 t2) (a a) (b b))
+  (deflistener (hash a b rg))
+  (deflistener (cat a b rg))
+  (deflistener (hash a rg))
+  (deflistener (cat a rg))
+  (deflistener (hash a rg))
+  (precedes ((0 1) (5 0)) ((1 1) (0 2)) ((2 1) (1 0)) ((3 1) (2 0))
+    ((4 1) (3 0)) ((5 1) (4 0)))
+  (uniq-gen rg t1)
+  (operation nonce-test (added-listener (hash a rg)) rg (4 0)
+    (enc b t1 rg (hash a rg)))
+  (label 19)
+  (parent 17)
+  (seen 17)
+  (unrealized (5 0))
+  (comment &quot;1 in cohort - 0 not yet seen&quot;))</pre>
+
+</body>
+</html>
